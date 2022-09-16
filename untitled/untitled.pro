@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    workerthread.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    workerthread.h
 
 FORMS += \
     mainwindow.ui
@@ -31,7 +33,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    gyn.qrc
+    prefix1.qrc
 
 DISTFILES += \
     dice.gif \

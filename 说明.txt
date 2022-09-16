@@ -1,0 +1,2 @@
+untitled是QT程序，netdesign是防火墙，使用make编译，insmod my_dev.ko即可以写入，清除使用make clean
+./a.out可以进行基本的测试输入，对应的C代码是test.c，read.c可以进行内核交互（可以查看日志，控制台），但是需要在insmod之后再使用。

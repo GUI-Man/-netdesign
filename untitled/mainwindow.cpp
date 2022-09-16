@@ -10,12 +10,22 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <workerthread.h>
+#include <QTextBrowser>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-{
-    //ComboBox  Setting
+{    //1、声明WorkerThread对象
     ui->setupUi(this);
+    m_workerThread.diary=ui->tb_diary;
+    //connect(&m_workerThread,&WorkerThread::writediary,ui->diary,&QTextBrowser::append);
+
+    //2、在你需要的地方直接调用QThread内部接口start()告知Qt系统帮你干杂七杂八的活
+    m_workerThread.start();
+    //3、结束后记得让Qt系统帮你擦干净屁股
+    //connect(this,&MainWindow::close,&m_workerThread,&WorkerThread::stop);
+    //ComboBox  Setting
+
     this->setFixedSize(800,600);
     InitDB();
     QSqlRelationalTableModel *model = new QSqlRelationalTableModel(this);
@@ -352,5 +362,5 @@ void MainWindow::InitDB()
                "end_time_hour int ,end_time_minute int ,stragedy int)");
 //query.exec("insert into Rule values (1,192,168,100,123,192,168,100,124,24,24,3,8,30,17,30,1)");
     return;
-
 }
+

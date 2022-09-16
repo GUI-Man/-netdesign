@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1038</width>
     <height>600</height>
    </rect>
   </property>
@@ -720,7 +720,7 @@
      <rect>
       <x>300</x>
       <y>50</y>
-      <width>85</width>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
@@ -733,12 +733,35 @@
      <rect>
       <x>650</x>
       <y>10</y>
-      <width>85</width>
+      <width>101</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Any Dst_ip</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>410</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>实时日志</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="tb_diary">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>321</width>
+      <height>101</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -748,8 +771,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>23</height>
+     <width>1038</width>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

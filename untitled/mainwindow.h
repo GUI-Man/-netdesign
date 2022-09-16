@@ -9,6 +9,7 @@
 #include <QSqlRelationalTableModel>
 #include <QSqlRelationalDelegate>
 #include <QDateTime>
+#include "workerthread.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -43,6 +44,7 @@ private:
     int ID=1;
     Rule rule[500];
     QDateTime current_date_time =QDateTime::currentDateTime();
+    WorkerThread m_workerThread;
 public :
    void slotForSubmmit(bool);
    void slotFordstIP1(int);
@@ -61,5 +63,7 @@ public :
    void slotLineEditDeny();
    void slotOntimer();
    void slotForSubmitter(bool);
+protected:
+   void readdiary();
 };
 #endif // MAINWINDOW_H
